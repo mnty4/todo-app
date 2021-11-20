@@ -6,6 +6,7 @@ const Todo = ({ todo, deleteTodo, editTodoList }) => {
   const [textArea, setTextArea] = useState(false);
   const textAreaRef = useRef();
   const editTodo = () => {
+    if (textArea) editTodoList(todo.key, textAreaRef.current.value);
     setTextArea(!textArea);
   };
 
